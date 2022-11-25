@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Result</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='cssstyle.css')}}">
+        <style>
+            .result{
+                color:white
+                }
+                .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+        </style>
+    </head>
+    <body>
+
+    <h1 align="center" class="h1">UNIVERSITY ADMIT ELIGIBILTY PREDICTOR</h1>
+
+    <div style="display:flex;align-items:center;justify-content:center;height:100vh;position: relative;text-align: center;">
+        <img src="{{url_for('static',filename='coast.jpg')}}" id="img">
+        {% if y >= 0.50 %}
+        <div style="width:50vh" class="centered">
+            <h4 class="result" style="background-color:green;padding:50px;margin:20px">FOR THE PREDICTED VALUE YOU HAVE A CHANCE!!!</h4>
+            <a href="/login" style="background-color:white; padding:10px;text-decoration:none">Logout</a>
+        </div>
+        {% else %}
+
+        <div style="width:50vh" class="centered">
+            <h4 class="result" style="background-color:red;padding:50px;margin:20px">FOR THE PREDICTED VALUE YOU DON'T HAVE A CHANCE/ LOW CHANCE!!!</h4>
+            <a href="/login" style="background-color:white; padding:10px;text-decoration:none">Logout</a>
+        </div>
+        {% endif %}
+
+
+    </div>
+    </body>
+
+</html>

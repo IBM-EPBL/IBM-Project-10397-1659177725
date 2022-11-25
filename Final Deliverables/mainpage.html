@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8">
+    <title> UAEP </title>
+    <link rel="stylesheet" href="{{url_for('static',filename='mainstyle.css')}}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Enter the details</div>
+    <div class="content">
+      <form action="{{ url_for('home')}}" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">GRE Score</span>
+            <input type="text" name="gre" placeholder=" " required>
+          </div>
+          <div class="input-box">
+            <span class="details">TOFEL Score</span>
+            <input type="text" name="toefl" placeholder="" required>
+          </div>
+          <div class="input-box">
+            <span class="details">University Ranking</span>
+            <input type="text" name="urank" placeholder="" required>
+          </div>
+          <div class="input-box">
+            <span class="details">SOP</span>
+            <input type="text" name="sop" placeholder="" required>
+          </div>
+          <div class="input-box">
+            <span class="details">LOR</span>
+            <input type="text" name="lor" placeholder="" required>
+          </div>
+          <div class="input-box">
+            <span class="details">CGPA</span>
+            <input type="text" name="cgpa" placeholder="" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="research" value="1"  id="dot-1">
+          <input type="radio" name="research" value="0"  id="dot-2">
+          <span class="gender-title">Research</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Yes</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">No</span>
+          </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Predict">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
